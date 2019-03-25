@@ -2,6 +2,8 @@
 
 import argparse
 
+# I believe the time complexity of this imp is O(n)
+
 
 def find_max_profit(prices):
     lowest = prices[0]
