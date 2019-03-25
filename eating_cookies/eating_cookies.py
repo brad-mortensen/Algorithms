@@ -19,13 +19,29 @@ import sys
   - needs caching for cleaner implementation'''
 
 
-def eating_cookies(n, cache=None):
+def eating_cookies_slow(n, cache=None):
     if n < 0:
         return 0
     elif n == 0:
         return 1
     else:
-        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+        return eating_cookies_slow(n-1) + eating_cookies_slow(n-2) + eating_cookies_slow(n-3)
+
+
+def eating_cookies(n, cache={}):
+    if n < 0:
+        return 0
+    elif n <= 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n in cache:
+        return cache[n]
+    else:
+        cache[n] = eating_cookies(
+            n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+        return cache[n]
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
