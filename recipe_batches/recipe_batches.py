@@ -14,6 +14,8 @@ import math
 4) Looking back
     - i think this is O(n) time
 '''
+
+
 def recipe_batches(recipe, ingredients):
     batches = []
     if recipe.keys() == ingredients.keys():
@@ -21,11 +23,14 @@ def recipe_batches(recipe, ingredients):
             batches.append(ingredients[k] // recipe[k])
             return min(batches)
     else:
-        return 0         
+        return 0
+
 
 if __name__ == '__main__':
-    # Change the entries of these dictionaries to test 
+    # Change the entries of these dictionaries to test
     # your implementation with different inputs
-    recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
-    ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
-    print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
+    recipe = {'milk': 100, 'butter': 50, 'flour': 5}
+    ingredients = {'milk': 132, 'butter': 48, 'flour': 51}
+    print('''{batches} batches can be made from the
+    available ingredients:{ingredients}.'''.format(
+        batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
