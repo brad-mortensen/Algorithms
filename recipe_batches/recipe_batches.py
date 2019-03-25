@@ -9,13 +9,19 @@ import math
     - if one ingredient is less that the recipe needs returns 0
 2) Devise a plan
     - iterate through recipe dict and compare it to ingredient dict
+    - create a list of comparisons between dict values
 3) Carry out plan
 4) Looking back
+    - i think this is O(n) time
 '''
 def recipe_batches(recipe, ingredients):
-    for key, value in  recipe.items():
-        print(key, value)
-
+    batches = []
+    if recipe.keys() == ingredients.keys():
+        for k in recipe:
+            batches.append(ingredients[k] // recipe[k])
+            return min(batches)
+    else:
+        return 0         
 
 if __name__ == '__main__':
     # Change the entries of these dictionaries to test 
