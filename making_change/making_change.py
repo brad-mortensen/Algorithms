@@ -15,6 +15,7 @@ def making_change(amount, denominations):
     for coin in denominations:
         # for each number in the range
         for i in range(coin, amount+1):
+            # increments the ways set for each coin and adds them
             ways[i] += ways[i-coin]
     return ways[amount]
 
