@@ -16,7 +16,7 @@ def rock_paper_scissors(n):
     else:
         for pairs in combinations_with_replacement(options, n):
             output.append(list(pairs))
-            return output
+        return output
 
 
 if __name__ == "__main__":
