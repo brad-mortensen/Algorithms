@@ -11,9 +11,12 @@ def rock_paper_scissors(n):
     elif n == 1:
         for option in options:
             output.append([option])
-    return output
-    else:
         return output
+    else:
+        for option in options:
+            output.append([])
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         num_plays = int(sys.argv[1])
