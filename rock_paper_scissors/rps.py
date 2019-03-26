@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys
+from itertools import combinations_with_replacement
 
 
 def rock_paper_scissors(n):
@@ -13,8 +14,9 @@ def rock_paper_scissors(n):
             output.append([option])
         return output
     else:
-        for option in options:
-            output.append([])
+        for pairs in combinations_with_replacement(options, n):
+            output.append(list(pairs))
+            return output
 
 
 if __name__ == "__main__":
